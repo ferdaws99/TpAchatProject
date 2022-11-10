@@ -11,6 +11,10 @@ environment {
         NEXUS_URL = "172.10.0.140:8081"
         NEXUS_REPOSITORY = "demoapp-snapshot"
         NEXUS_CREDENTIAL_ID = "nexus-user-credentials"
+        registry = 'mahdiksemtini/docker-spring-boot'
+        registryCredential = 'dockerHub'
+        dockerImage = ''
+
     }
 
     stages {
@@ -85,6 +89,15 @@ stage("Maven Build") {
                 }
             }
         }
+        stage('Deploy our image') {
+                    steps {
+                        script {
+                            docker.withRegistry( '', registryCredential ) {
+                                dockerImage.push()
+                            }
+                        }
+                    }
+                }
 
 }
     }
