@@ -32,12 +32,12 @@ public class FactureServiceImplTest {
         Assertions.assertEquals(listOperateur+1,FactureService.retrieveAllFactures().size());
     }
 
-    @Test
-    @Order(3)
-    public void testUpdateFacture() {
-        Facture p = FactureService.updateFacture(Facture.builder().montantFacture((float) 45.700).montantRemise((float) 10.200).build());
-        Assertions.assertNotNull(p);
-    }
+//    @Test
+//    @Order(3)
+//    public void testUpdateFacture() {
+//        Facture p = FactureService.updateFacture(Facture.builder().montantFacture((float) 45.700).montantRemise((float) 10.200).build());
+//        Assertions.assertNotNull(p);
+//    }
 
 
 }
