@@ -1,4 +1,4 @@
 FROM openjdk:11
 EXPOSE 8083
-ADD target/TpAchat.jar TpAchat.jar
+ADD target/tpachat.jar tpachat.jar
 ENTRYPOINT ["java","-jar","/tpachat.jar"]
