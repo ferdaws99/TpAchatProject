@@ -75,7 +75,7 @@
 		<repository>
 			<id>deploymentRepo</id>
 			<name>Nexus Repository</name>
-			<url>http://192.168.1.21:8081/repository/maven-releases</url>
+			<url>http://172.16.1.162:8081/repository/maven-releases</url>
 		</repository>
 	</distributionManagement>
 	<build>
@@ -84,7 +84,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
+			plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.0.2</version>
                 </plugin>
