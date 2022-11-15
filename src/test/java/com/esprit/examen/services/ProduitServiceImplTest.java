@@ -59,10 +59,13 @@ try{
 
     @Test
     public void testDeleteProduit()  {
+        try{
         List<Produit> Produits = produitService.retrieveAllProduits();
          Produit Prod =Produits.get(0);
        produitService.deleteProduit(Prod.getIdProduit());
-      }
+      }catch (Exception e){
+        l.info(e);}
+    }
     @Test
     public void TestGetProduit(){
         try {
