@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:11
 EXPOSE 8083
-ADD target/TpAchat.war TpAchat.war
-ENTRYPOINT ["java","-jar","/TpAchat.war"]
+ADD target/TpAchat.jar TpAchat.jar
+ENTRYPOINT ["java","-jar","/TpAchat.jar"]
