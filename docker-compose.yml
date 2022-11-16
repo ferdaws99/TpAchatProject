@@ -18,9 +18,6 @@ services:
     container_name: ferdaws02/tpachatproject
     environment:
      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/tpachato?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-volumes:
-  mysql_container: { }
-
     restart: on-failure
     ports:
       - 8089:8089
