@@ -14,7 +14,7 @@ services:
   spring:
     depends_on:
       - mysqldb
-    image: alaamoalla/springboot-achat:latest
+    image: mahdiksemtini/tpachat-backend:latest
     container_name: achatproject
     restart: on-failure
     ports:
