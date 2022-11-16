@@ -29,8 +29,8 @@ public class ProduitServiceImplTest {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date1 = dateFormat.parse("10/02/2020");
         Date date2 = dateFormat.parse("12/09/2022");
-        prod.setCodeProduit("f-455112");
-        prod.setLibelleProduit("Tele");
+        prod.setCodeProduit("f-222222");
+        prod.setLibelleProduit("phone");
         prod.setDateCreation(date1);
         prod.setDateDerniereModification(date2);
         produitService.addProduit(prod);
@@ -47,7 +47,7 @@ try{
         l.info("Produitssssssss " + Produits);
         l.info("Produit " +Produits.size());
        if(Produits.size()>0) {
-           assertEquals(2, Produits.size());
+           assertEquals(1, Produits.size());
            System.out.println("there is more then 0 Product");
            l.info("Produit " +Produits.size());
        }else{
