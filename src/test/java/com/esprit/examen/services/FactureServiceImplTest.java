@@ -1,5 +1,9 @@
 package com.esprit.examen.services;
 
+import com.esprit.examen.entities.DetailFacture;
+import com.esprit.examen.entities.Fournisseur;
+import com.esprit.examen.entities.Reglement;
+import com.esprit.examen.repositories.FactureRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -11,6 +15,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.esprit.examen.TpAchatProjectApplication;
 import com.esprit.examen.entities.Facture;
 
+import java.util.Date;
+import java.util.Set;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest(classes = TpAchatProjectApplication.class)
 public class FactureServiceImplTest {
@@ -20,7 +27,9 @@ public class FactureServiceImplTest {
     @Test
     @Order(1)
     public void testAddFacture() {
-        Facture op = FactureService.addFacture(Facture.builder().montantFacture((float) 45.700).montantRemise((float) 10.200).build());
+        Facture op = FactureService.addFacture(Facture.builder().montantFacture((float) 45.700).montantRemise((float) 10.200).dateCreationFacture(new Date()).
+                archivee(false).dateDerniereModificationFacture(new Date(0)).
+                detailsFacture((Set<DetailFacture>) new DetailFacture()).fournisseur(new Fournisseur()).reglements((Set<Reglement>) new Reglement()).build());
         Assertions.assertNotNull(op);
     }
 
