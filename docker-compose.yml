@@ -3,17 +3,24 @@ version: "3.3"
 services:
   mysqldb:
     container_name: mysqldb
-    image: mysql:8
+    image: mysql:latest
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: tpachato
     volumes:
      - /home/mysql/data:/var/lib/mysql
-
+    ports:
+      - 3308:3306
 
   spring_app:
-    image: tpachatproject
-    container_name: tpachatproject
+    image: ferdaws02/tpachatproject
+    container_name: ferdaws02/tpachatproject
+    environment:
+     SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/tpachato?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+volumes:
+  mysql_container: { }
+
     restart: on-failure
     ports:
       - 8089:8089
