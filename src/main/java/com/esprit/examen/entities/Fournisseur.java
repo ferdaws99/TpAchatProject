@@ -24,6 +24,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Fournisseur implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -38,12 +39,19 @@ public class Fournisseur implements Serializable {
 	@OneToMany(mappedBy="fournisseur")
 	@JsonIgnore
 	private Set<Facture> factures;
-    @ManyToMany
-    @JsonIgnore
-    private Set<SecteurActivite> secteurActivites;
-    @OneToOne(cascade= CascadeType.ALL,fetch=FetchType.EAGER)
-    private DetailFournisseur detailFournisseur;
-    
+	@ManyToMany
+	@JsonIgnore
+	private Set<SecteurActivite> secteurActivites;
+	@OneToOne(cascade= CascadeType.ALL,fetch=FetchType.EAGER)
+	private DetailFournisseur detailFournisseur;
 
-	
+
+	public Fournisseur( String code, String libelle, CategorieFournisseur categorieFournisseur,DetailFournisseur detailFournisseur) {
+		super();
+		this.code = code;
+		this.libelle = libelle;
+		this.categorieFournisseur = categorieFournisseur;
+		this.detailFournisseur = detailFournisseur;
+
+	}
 }
