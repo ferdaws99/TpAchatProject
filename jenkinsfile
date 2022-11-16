@@ -93,7 +93,7 @@ stage('MVN TEST'){
         stage('Building our image') {
             steps {
                 script {
-                    dockerImage = docker.build  ("mahdiksemtini/tpachat-backend:latest")
+                    dockerImage = docker.build("mahdiksemtini/tpachat-backend:latest")
                 }
             }
         }
