@@ -15,7 +15,7 @@ services:
 
   spring_app:
     image: ferdaws02/tpachatproject
-    container_name: ferdaws02/tpachatproject
+    container_name: tpachatproject
     environment:
      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/tpachato?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     restart: on-failure
