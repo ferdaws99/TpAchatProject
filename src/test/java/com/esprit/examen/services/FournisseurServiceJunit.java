@@ -61,13 +61,5 @@ public class FournisseurServiceJunit {
         f.setLibelle("fournisseur test");
         assertThat(f.getLibelle()).isEqualTo("fournisseur test");
     }
-    @Test
-    @Transactional
 
-    public void assignSecteurActiviteToFournisseur()  throws ParseException {
-        Fournisseur f = new Fournisseur();
-        Fournisseur fournisseur = fornisseurservice.addFournisseur(f);
-
-
-    }
 }
